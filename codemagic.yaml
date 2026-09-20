@@ -4,11 +4,10 @@ workflows:
     instance_type: mac_mini_m2
     max_build_duration: 30
     scripts:
-      - name: Get dependencies
+      - name: Generate Android project & Build APK
         script: |
+          flutter create . --platforms=android
           flutter pub get
-      - name: Build APK
-        script: |
           flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/*.apk
