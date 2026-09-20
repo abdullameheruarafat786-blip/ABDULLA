@@ -4,14 +4,6 @@ workflows:
     instance_type: mac_mini_m2
     max_build_duration: 30
     scripts:
-      - name: Generate Android project
-        script: |
-          flutter create . --platforms=android
-      - name: Use stable Gradle version
-        script: |
-          cd android
-          ./gradlew wrapper --gradle-version=8.5
-          cd ..
       - name: Get dependencies
         script: |
           flutter pub get
